@@ -1,4 +1,4 @@
-# Ray Tracing
+# Ray Tracing - Project 3
 
 ## First Sphere
 
