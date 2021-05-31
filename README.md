@@ -2,15 +2,15 @@
 
 ## First Sphere
 
-This is a Lambertian Sphere
+### This is a Lambertian Sphere  
 ![Lambertian](rendered/lambertiana.png)
 
 ## Second Sphere
 
-Changing Light Source, color, and adding Phong Reflection
+### Changing Light Source, color, and adding Phong Reflection  
 ![Phong1](rendered/phong1.png)
 
 ## Third Sphere
 
-Changing Light Source and color
+### Changing Light Source and color  
 ![Phong1](rendered/phong2.png)
