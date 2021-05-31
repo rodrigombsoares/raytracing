@@ -4,7 +4,7 @@ include("vector.jl")
 
 # IMAGE
 aspectratio = 16 / 9
-imwidth = 400
+imwidth = 800
 imheight = trunc(Int64, imwidth / aspectratio)
 
 # CAMERA
@@ -56,9 +56,6 @@ function raycolor(ray::Ray, sphere::Sphere, lightSource::LightSource)
         r = (Kdr*NL + KsRVn)*sphere.color.r + lightSource.lightColor.r
         g = (Kdg*NL + KsRVn)*sphere.color.g + lightSource.lightColor.g
         b = (Kdb*NL + KsRVn)*sphere.color.b + lightSource.lightColor.b
-        # r = (Kdr*NL + KsRVn)*sphere.color.r + lightSource.lightColor.r
-        # g = (Kdg*NL + KsRVn)*sphere.color.g + lightSource.lightColor.g
-        # b = (Kdb*NL + KsRVn)*sphere.color.b + lightSource.lightColor.b
 
         return RGB(r, g, b)
     end
@@ -91,13 +88,13 @@ frame1 = render(s1, ls1, 50)
 save("rendered/lambertiana.png", frame1)
 
 spherecolor = RGB(0.0, 0.0, 1.0)
-s2 = Sphere(Vec3(0.0, 0.0, -1.0), 0.5, spherecolor, 0.7) # Phong1
+s2 = Sphere(Vec3(0.0, 0.0, -1.0), 0.5, spherecolor, 0.8) # Phong1
 ls2 = LightSource(3*π/4, π/4, 3.0, RGB(0.0,0.0,0.0))
 frame2 = render(s2, ls2, 50)
 save("rendered/phong1.png", frame2)
 
 spherecolor = RGB(0.34, 0.0, 0.66)
-s3 = Sphere(Vec3(0.0, 0.0, -1.0), 0.5, spherecolor, 0.9) # Phong2
+s3 = Sphere(Vec3(0.0, 0.0, -1.0), 0.5, spherecolor, 0.4) # Phong2
 ls3 = LightSource(7*π/4, π/2, 0.8, RGB(0.0,0.0,0.0))
 frame3 = render(s3, ls3, 50)
 save("rendered/phong2.png", frame3)
